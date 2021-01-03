@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KedaWithRabbitMQSample.Api", "KedaWithRabbitMQSample.Api\KedaWithRabbitMQSample.Api.csproj", "{8F1B88FD-0CB0-4ABD-A375-3EC4DFB134A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KedaWithRabbitMQSample.Common", "KedaWithRabbitMQSample.Common\KedaWithRabbitMQSample.Common.csproj", "{B24D4E79-EC6C-4939-B9B2-9C10D6C306BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KedaWithRabbitMQSample.Consumer", "KedaWithRabbitMQSample.Consumer\KedaWithRabbitMQSample.Consumer.csproj", "{155043CA-A292-4E70-A9C5-E0367F5C822E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KedaWithRabbitMQSample.Commands", "KedaWithRabbitMQSample.Commands\KedaWithRabbitMQSample.Commands.csproj", "{B0F90AB2-C1F0-45C5-A8D5-992BE1174C01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F1B88FD-0CB0-4ABD-A375-3EC4DFB134A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F1B88FD-0CB0-4ABD-A375-3EC4DFB134A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F1B88FD-0CB0-4ABD-A375-3EC4DFB134A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F1B88FD-0CB0-4ABD-A375-3EC4DFB134A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B24D4E79-EC6C-4939-B9B2-9C10D6C306BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B24D4E79-EC6C-4939-B9B2-9C10D6C306BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B24D4E79-EC6C-4939-B9B2-9C10D6C306BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B24D4E79-EC6C-4939-B9B2-9C10D6C306BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{155043CA-A292-4E70-A9C5-E0367F5C822E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{155043CA-A292-4E70-A9C5-E0367F5C822E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{155043CA-A292-4E70-A9C5-E0367F5C822E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{155043CA-A292-4E70-A9C5-E0367F5C822E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0F90AB2-C1F0-45C5-A8D5-992BE1174C01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0F90AB2-C1F0-45C5-A8D5-992BE1174C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0F90AB2-C1F0-45C5-A8D5-992BE1174C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0F90AB2-C1F0-45C5-A8D5-992BE1174C01}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5154CB5D-A725-43ED-8C2A-C7ADBD3EF651}
+	EndGlobalSection
+EndGlobal

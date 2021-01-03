@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keda-consumer
+spec:
+  selector:
+    matchLabels:
+      app: keda-consumer
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: keda-consumer
+    spec:
+      containers:
+        - name: keda-consumer
+          image: oerdogan90/keda-consumer
+          env:
+            - name: RabbitMq__Port
+              value: "5672"
+            - name: RabbitMq__Password
+              value: <YOURPASSWORD>
+            - name: RabbitMq__UserName
+              value: <YOURUSERNAME>
+            - name: RabbitMq__HostName
+              value: <YOURHOSTNAME>
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "80m"
+            limits:
+              memory: "128Mi"
+              cpu: "120m"
+          ports:
+            - containerPort: 8080
+---
+apiVersion: keda.sh/v1alpha1
+kind: TriggerAuthentication
+metadata:
+  name: azure-servicebus-auth
+spec:
+  podIdentity:
+    provider: azure
+
+---
+apiVersion: keda.k8s.io/v1alpha1
+kind: ScaledObject
+metadata:
+  name: keda-consumer-scaled-object
+  namespace: default
+spec:
+  scaleTargetRef:
+    deploymentName: keda-consumer
+  pollingInterval: 5
+  cooldownPeriod: 30
+  maxReplicaCount: 10
+  minReplicaCount: 2
+  triggers:
+  - type: rabbitmq
+    metadata:
+      host: <YOURHOSTNAME>
+      queueName: service.order.purchase
+      queueLength: "5"
+      namespace: default

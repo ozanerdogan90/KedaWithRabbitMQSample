@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keda-producer
+spec:
+  selector:
+    matchLabels:
+      app: keda-producer
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: keda-producer
+    spec:
+      containers:
+        - name: keda-producer
+          image: oerdogan90/keda-producer
+          env:
+            - name: RabbitMq__Port
+              value: "5672"
+            - name: RabbitMq__Password
+              value: <YOURPASSWORD>
+            - name: RabbitMq__UserName
+              value: <YOURUSERNAME>
+            - name: RabbitMq__HostName
+              value: <YOURHOSTNAME>
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "80m"
+            limits:
+              memory: "128Mi"
+              cpu: "120m"
+          ports:
+            - containerPort: 8080
